@@ -1,18 +1,138 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Loading from './loading';
+import '@/styles/page.css';
+import avatar from '../../public/images/avatar.jpg';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className=''>
-      <Loading />
-    </div>
+    <main className='h-[2000px]'>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <section
+          className='w-screen h-screen 
+      
+      '>
+          <header className='fixed top-0 flex h-[54px] sm:h-[60px] lg:h-[78px] justify-between items-center left-0 right-0 md:left-4 md:right-4 lg:left-[104px] lg:right-[104px] z-10 py-1.5 lg:py-0 bg-[var(--color-primary-black)] text-white'>
+            <div className='flex h-full gap-4 justify-between items-center'>
+              <span className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='size-12 lg:size-17'>
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5'
+                  />
+                </svg>
+              </span>
+              <span className='text-2xl lg:text-4xl font-light'>UYEN</span>
+            </div>
+
+            <input
+              id='checkbox'
+              className='absolute right-5 w-8 h-10 z-1 opacity-0 cursor-pointer'
+              type='checkbox'
+            />
+
+            <ul className='nav-list lg:relative lg:top-auto lg:flex justify-between items-center text-sm mr-6 bg-[var(--color-primary-black)]'>
+              <li className=''>
+                <a href='#home'>Home</a>
+              </li>
+              <li className=''>
+                <a href='#about'>About</a>
+              </li>
+
+              <li className=''>
+                <a href='#service'>Service</a>
+              </li>
+
+              <li className=''>
+                <a href='#project'>Project</a>
+              </li>
+
+              <li className=''>
+                <a href='#contact'>Contact</a>
+              </li>
+            </ul>
+
+            <label
+              htmlFor='checkbox'
+              className='header__navbar-icon-wrapper flex lg:hidden justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black cursor-pointer'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                strokeWidth={1.5}
+                stroke='currentColor'
+                className='menu-icon size-9 cursor-pointer'>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+                />
+              </svg>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                strokeWidth={1.5}
+                stroke='currentColor'
+                className='size-9 close-icon cursor-pointer'>
+                <path strokeLinecap='round' strokeLinejoin='round' d='M6 18 18 6M6 6l12 12' />
+              </svg>
+            </label>
+          </header>
+
+          <div className='home-page w-[var(--max-width-md)] lg:w-[var(--max-width-lg)] mx-auto text-white mt-[var(--header-height-xs)] sm:mt-[var(--header-height-sm)] lg:mt-[var(--header-height-lg)]'>
+            <div className='block lg:flex gap-10'>
+              <div className='w-full lg:w-[50%]'>
+                <div className='intro-wrapper py-9'>
+                  <h1 className='intro__title'>Hi, I'M Uyen! Createtive</h1>
+                  <div className='intro__animation-typing'>
+                    <div className='second'>
+                      <span>Front-END Developer</span>
+                    </div>
+                    <div className='first'>
+                      <span>Power Platform Dev</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='my-5'>
+                  <p className='text-[var(--text-primary-color)]'>
+                    I'm a dedicated Front-End Developer with one year of hands-on experience in
+                    building modern web applications using React.js and JavaScript. I also have
+                    practical experience with Microsoft Power Platform — including Power Pages,
+                    Power Automate, and Power Apps — allowing me to create integrated and efficient
+                    business solutions.
+                  </p>
+                </div>
+              </div>
+
+              <div className='avatar-container hidden lg:flex lg:w-[50%] items-center justify-center my-12'>
+                <div className='avatar-border'>
+                  <img src={avatar.src} className='avatar-image object-cover' alt='avatar' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+    </main>
   );
 }

@@ -1,26 +1,36 @@
-section h2 {
+h1 {
+  color: rgba(40, 44, 52, 0.8);
 }
 
-.light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  /*location x= 30% - y = 50%.*/
-  background: radial-gradient(circle, transparent 10%, rgba(0, 0, 0, 0.8) 20%);
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: move-glow 2s linear infinite;
+h1:before {
+  /* Get content from the data-text attribute and create one rectangle-like layer.*/
+  content: attr(data-text);
+  position: absolute; /*Overlay the text */
+  /* Gradient background cutout shows only in text. */
+  background-color: var(--color-primary-green);
+  --webkit-background-clip: text;
+  /* Limit the background area inside the text */
+  background-clip: text;
+  color: transparent;
+  background-size: 100% 90%;
+  line-height: 0.9;
+  /* Cut the text to show only in the small ellipse — creating the illusion of a beam of light. */
+  clip-path: ellipse(80px 80px at -2.54% -9.25%);
+  animation: swing 3s infinite;
+  animation-direction: alternate;
 }
 
-@keyframes move-glow {
+@keyframes swing {
   0% {
-    background-position: 100% center;
+    -webkit-clip-path: ellipse(80px 80px at -2.54% -9.25%);
+    clip-path: ellipse(80px 80px at -2.54% -9.25%);
   }
-
+  50% {
+    -webkit-clip-path: ellipse(80px 80px at 49.66% 64.36%);
+    clip-path: ellipse(80px 80px at 49.66% 64.36%);
+  }
   100% {
-    background-position: 0% center;
+    -webkit-clip-path: ellipse(80px 80px at 102.62% -1.61%);
+    clip-path: ellipse(80px 80px at 102.62% -1.61%);
   }
 }
