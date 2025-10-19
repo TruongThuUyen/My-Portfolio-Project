@@ -4,12 +4,20 @@
   /* width - height */
   --max-width-lg: calc(100% - 208px);
   --max-width-md: calc(100% - 160px);
+  --max-width-xs: calc(100% - 80px);
+
+  /* Padding - margin */
+  --padding-section-lg: 104px;
+  --padding-section-md: 80px;
+  --padding-section-xs: 32px;
+  --moveY: 4rem;
 
   --header-height-lg: 78px;
   --header-height-sm: 60px;
   --header-height-xs: 54px;
 
   --background: #000;
+  --background-section: #09101a;
   --color-primary-green: #55e6a5;
   --color-primary-black: #141c27;
 
@@ -19,6 +27,12 @@
 
   /*text font */
   --font-title: 'Poppins', sans-serif;
+
+  /* Transition */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
 }
 
 @theme inline {

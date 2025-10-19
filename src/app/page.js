@@ -20,10 +20,13 @@ export default function Home() {
         <Loading />
       ) : (
         <section
-          className='w-screen h-screen 
+          className='w-full h-screen 
       
       '>
-          <header className='fixed top-0 flex h-[54px] sm:h-[60px] lg:h-[78px] justify-between items-center left-0 right-0 md:left-4 md:right-4 lg:left-[104px] lg:right-[104px] z-10 py-1.5 lg:py-0 bg-[var(--color-primary-black)] text-white'>
+          {/* HEADER */}
+          <header
+            className='fixed top-0  h-[54px] sm:h-[60px] lg:h-[78px] 
+            flex justify-between items-center mx-auto left-0 md:left-4 lg:left-[104px] right-0 md:right-4 lg:right-[104px]  z-10 py-1.5 lg:py-0 bg-[var(--color-primary-black)] text-white'>
             <div className='flex h-full gap-4 justify-between items-center'>
               <span className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black'>
                 <svg
@@ -97,11 +100,13 @@ export default function Home() {
               </svg>
             </label>
           </header>
+          {/* END HEADER */}
 
-          <div className='home-page w-[var(--max-width-md)] lg:w-[var(--max-width-lg)] mx-auto text-white mt-[var(--header-height-xs)] sm:mt-[var(--header-height-sm)] lg:mt-[var(--header-height-lg)]'>
+          {/* HOME SECTION */}
+          <div className='home-page section-wrapper pt-[var(--header-height-xs)] sm:pt-[var(--header-height-sm)] lg:pt-[var(--header-height-lg)] pb-10 bg-[var(--background-section)] text-white'>
             <div className='block lg:flex gap-10'>
               <div className='w-full lg:w-[50%]'>
-                <div className='intro-wrapper py-9'>
+                <div className='intro-wrapper pb-2 sm:pb-9 pt-9'>
                   <h1 className='intro__title'>Hi, I'M Uyen! Createtive</h1>
                   <div className='intro__animation-typing'>
                     <div className='second'>
@@ -114,7 +119,7 @@ export default function Home() {
                 </div>
 
                 <div className='my-5'>
-                  <p className='text-[var(--text-primary-color)]'>
+                  <p className='text-md text-[var(--text-primary-color)]'>
                     I'm a dedicated Front-End Developer with one year of hands-on experience in
                     building modern web applications using React.js and JavaScript. I also have
                     practical experience with Microsoft Power Platform — including Power Pages,
@@ -122,6 +127,18 @@ export default function Home() {
                     business solutions.
                   </p>
                 </div>
+
+                <button
+                  className='btn-slide 
+                    relative mt-5 z-1
+                    py-2.5 px-5 text-center 
+                    text-md
+                    text-[var(--color-primary-black)] bg-[var(--color-primary-green)] 
+                    transition-[var(--tran-05)] 
+                    overflow-hidden cursor-pointer
+                '>
+                  <a href='#'>DOWNLOAD MY CV</a>
+                </button>
               </div>
 
               <div className='avatar-container hidden lg:flex lg:w-[50%] items-center justify-center my-12'>
@@ -131,6 +148,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* HOME SECTION */}
         </section>
       )}
     </main>

@@ -1,49 +1,17 @@
-/* Home section css */
+:root {
+  --typing-text-size: 4rem;
+}
 
-.avatar-stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-  background-color: var(--secondary-bg);
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 500px;
-  position: relative;
+/* SECTION WRAPPER CSS */
+.section-wrapper {
+  padding: var(--padding-section-lg);
+  margin: 0 auto;
   overflow: hidden;
 }
+/* END SECTION WRAPPER CSS */
 
-.avatar-stage::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    transparent,
-    rgba(123, 66, 246, 0.1),
-    transparent,
-    transparent
-  );
-  transform: rotate(45deg);
-  animation: glow 10s linear infinite;
-  z-index: 0;
-}
-
-@keyframes glow {
-  0% {
-    transform: rotate(45deg) translateX(-100%);
-  }
-  100% {
-    transform: rotate(45deg) translateX(100%);
-  }
-}
-
+/* HOME SECTION CSS*/
+/* Header css */
 .nav-list {
   height: 100%;
   transition: 0.3s ease-in;
@@ -75,16 +43,18 @@
   color: var(--color-primary-green);
   transition: all 0.3s ease-in;
 }
+/* End header css */
 
+/* Intro css */
 .intro__title {
   color: var(--text-secondary-color);
-  font-size: 42px;
+  font-size: 2.625rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .intro__animation-typing {
-  height: 4rem;
+  height: var(--typing-text-size);
   overflow: hidden;
 }
 
@@ -92,7 +62,7 @@
   font-size: 2.625rem;
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: var(--typing-text-size);
   color: var(--color-primary-green);
   display: inline-block;
 }
@@ -110,10 +80,10 @@
   }
 
   40% {
-    margin-top: -8rem;
+    margin-top: calc(var(--typing-text-size) * -2);
   }
   60% {
-    margin-top: -8rem;
+    margin-top: calc(var(--typing-text-size) * -2);
   }
 
   90%,
@@ -121,14 +91,9 @@
     margin-top: 0;
   }
 }
+/* End intro css */
 
 /* Avatar css  */
-.avatar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .avatar-border {
   position: relative;
   width: 360px;
@@ -153,8 +118,34 @@
   overflow: hidden;
   transition: all 0.3s ease;
 }
+/* End avatar css */
+
+/* Button css */
+.btn-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color-primary-black);
+
+  transition: var(--tran-05);
+}
+
+.btn-slide:hover {
+  color: var(--text-secondary-color);
+}
+
+.btn-slide:hover::before {
+  width: 100%;
+}
+/* End button css */
+/* END HOME SECTION CSS*/
 
 @media screen and (max-width: 1024px) {
+  /* Header css */
   .nav-list {
     position: absolute;
     top: 100%;
@@ -174,7 +165,7 @@
   }
 
   .nav-list li a {
-    padding: 2% 3%;
+    height: 50px;
     width: 100%;
   }
 
@@ -183,7 +174,7 @@
   }
 
   #checkbox:checked ~ .nav-list {
-    height: calc(51px * 5 + 6px);
+    height: calc(50px * 5 + 12px);
     padding: 6px 0;
     display: block;
   }
@@ -195,7 +186,52 @@
   #checkbox:checked ~ .header__navbar-icon-wrapper .close-icon {
     display: block;
   }
+  /* End header css */
+}
 
-  #checkbox:checked ~ .nav-list > li a {
+@media screen and (max-width: 1024px) {
+  /* SECTION WRAPPER CSS */
+  .section-wrapper {
+    padding: var(--padding-section-md);
   }
+  /* END SECTION WRAPPER CSS */
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --typing-text-size: 2.625rem;
+  }
+
+  /* SECTION WRAPPER CSS */
+  .section-wrapper {
+    padding: var(--padding-section-xs);
+  }
+  /* END SECTION WRAPPER CSS */
+
+  /* Intro css */
+  .intro__title {
+    font-size: 1.625rem;
+  }
+
+  .intro__animation-typing {
+    height: var(--typing-text-size);
+    overflow: hidden;
+  }
+
+  .intro__animation-typing > div > span {
+    font-size: 1.625rem;
+    margin-bottom: var(--typing-text-size);
+    color: var(--color-primary-green);
+    display: inline-block;
+  }
+  /* End intro css */
+
+  /* Header css */
+  .nav-list li a {
+    height: 40px;
+  }
+  #checkbox:checked ~ .nav-list {
+    height: calc(40px * 5 + 12px);
+  }
+  /* End header css */
 }
