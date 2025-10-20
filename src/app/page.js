@@ -1,8 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
-import Loading from './loading';
 import '@/styles/page.css';
+import { useEffect, useRef, useState } from 'react';
 import avatar from '../../public/images/avatar.jpg';
+import Loading from './loading';
+import Services from '@/components/services/Services';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -149,6 +150,10 @@ export default function Home() {
             </div>
           </div>
           {/* HOME SECTION */}
+
+          {/* SERVICES SECTION */}
+          <Services />
+          {/* END SERVICES SECTION */}
         </section>
       )}
     </main>

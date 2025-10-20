@@ -1,0 +1,39 @@
+/* MY SERVICES CSS*/
+.services-title {
+  animation: glow 3s ease-out forwards;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
+.my-service__list-item {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.my-service__list-item.show {
+  animation: slide-in-left 1s ease-in forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* END MY SERVICES CSS*/
