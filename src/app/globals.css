@@ -40,8 +40,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
   }
 }
 
@@ -52,4 +50,21 @@
 html,
 body {
   background-color: var(--background);
+  color: white;
+}
+
+.section-sub-title.show {
+  animation: slide-up 3s ease-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
