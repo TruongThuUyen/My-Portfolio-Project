@@ -4,9 +4,17 @@
 
 /* SECTION WRAPPER CSS */
 .section-wrapper {
-  padding: var(--padding-section-lg);
+  padding-left: var(--padding-section-lg);
+  padding-right: var(--padding-section-lg);
   margin: 0 auto;
   overflow: hidden;
+}
+
+.section-title {
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin: 20px 0;
+  font-size: 24px;
 }
 /* END SECTION WRAPPER CSS */
 
@@ -192,7 +200,8 @@
 @media screen and (max-width: 1024px) {
   /* SECTION WRAPPER CSS */
   .section-wrapper {
-    padding: var(--padding-section-md);
+    padding-left: var(--padding-section-md);
+    padding-right: var(--padding-section-md);
   }
   /* END SECTION WRAPPER CSS */
 }
@@ -204,8 +213,13 @@
 
   /* SECTION WRAPPER CSS */
   .section-wrapper {
-    padding: var(--padding-section-xs);
+    padding-left: var(--padding-section-xs);
+    padding-right: var(--padding-section-xs);
   }
+  .section-title {
+    font-size: 20px;
+  }
+
   /* END SECTION WRAPPER CSS */
 
   /* Intro css */

@@ -26,14 +26,12 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <div className='section-wrapper'>
-      <p className='my-5 text-xl sm:text-2xl text-center uppercase text-[var(--color-primary-green)]'>
-        My services
-      </p>
+    <div className='section-wrapper pt-20 pb-10'>
+      <p className='section-title text-center'>My services</p>
       <h2 className='services-title text-3xl md:text-5xl font-medium text-center text-[var(--text-secondary-color)] max-w-[1024px] mx-auto '>
         Transforming ideas into robust solutions with code and platform innovation.
       </h2>
-      <ul className='my-service__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-20'>
+      <ul className='my-service__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20'>
         <li className='my-service__list-item  relative px-10 md:py-10 lg:py-12 sm:py-20 border-2 border-[var(--color-primary-green)] text-[var(--text-primary-color)]'>
           <p className='mt-8 mb-4 text-md sm:text-xl uppercase text-center text-[var(--text-secondary-color)]'>
             Frontend Development

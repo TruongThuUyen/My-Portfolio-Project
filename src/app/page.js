@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
 import Services from '@/components/services/Services';
+import AboutMe from '@/components/about-me/AboutMe';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -154,6 +155,10 @@ export default function Home() {
           {/* SERVICES SECTION */}
           <Services />
           {/* END SERVICES SECTION */}
+
+          {/* ABOUT ME SECTION */}
+          <AboutMe />
+          {/* END ABOUT ME SECTION */}
         </section>
       )}
     </main>
