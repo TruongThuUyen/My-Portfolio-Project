@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import './styled.css';
-import { WavyText } from '../wavyText/Wavytext';
 
 export default function ServicesSection() {
   useEffect(() => {
@@ -17,7 +16,7 @@ export default function ServicesSection() {
     );
 
     const liElements = document.querySelectorAll('.my-service__list-item');
-    const titleEl = document.querySelectorAll('.services-title');
+    const titleEl = document.querySelectorAll('.section-sub-title');
     liElements.forEach((el) => observer.observe(el));
 
     observer.observe(titleEl[0]);
@@ -26,9 +25,9 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <div className='section-wrapper pt-20 pb-10'>
+    <section id='services' className='section-wrapper pt-20 pb-10'>
       <p className='section-title text-center'>My services</p>
-      <h2 className='services-title text-3xl md:text-5xl font-medium text-center text-[var(--text-secondary-color)] max-w-[1024px] mx-auto'>
+      <h2 className='section-sub-title text-3xl md:text-5xl font-medium text-center text-[var(--text-secondary-color)] max-w-[1024px] mx-auto'>
         Transforming ideas into robust solutions with code and platform innovation.
       </h2>
       <ul className='my-service__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20'>
@@ -60,6 +59,6 @@ export default function ServicesSection() {
           </span>
         </li>
       </ul>
-    </div>
+    </section>
   );
 }

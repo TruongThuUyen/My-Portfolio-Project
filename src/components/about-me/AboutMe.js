@@ -27,9 +27,8 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div id='#about' className='section-wrapper pt-20 pb-10'>
+    <section id='about' className='section-wrapper pt-20 pb-10'>
       <p className='section-title'>About Me</p>
-
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 my-5'>
         <div className='flex flex-col'>
           <h2 className='section-sub-title text-3xl md:text-5xl font-medium text-[var(--text-secondary-color)] max-w-[1024px] my-8 leading-none'>
@@ -63,6 +62,6 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

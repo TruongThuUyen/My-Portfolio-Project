@@ -5,6 +5,7 @@ import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
 import Services from '@/components/services/Services';
 import AboutMe from '@/components/about-me/AboutMe';
+import { Link } from 'react-scroll';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,6 +16,11 @@ export default function Home() {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  // const handleScroll = (id) => {
+  //   const section = document.getElementById(id);
+  //   section?.scrollIntoView({ behavior: 'smooth' });
+  // };
 
   return (
     <main className='h-[2000px]'>
@@ -30,7 +36,11 @@ export default function Home() {
             className='fixed top-0  h-[54px] sm:h-[60px] lg:h-[78px] 
             flex justify-between items-center mx-auto left-0 md:left-4 lg:left-[104px] right-0 md:right-4 lg:right-[104px]  z-10 py-1.5 lg:py-0 bg-[var(--color-primary-black)] text-white'>
             <div className='flex h-full gap-4 justify-between items-center'>
-              <span className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black'>
+              <Link
+                to='home'
+                smooth={true}
+                duration={800}
+                className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black hover:cursor-pointer'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -44,7 +54,7 @@ export default function Home() {
                     d='M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5'
                   />
                 </svg>
-              </span>
+              </Link>
               <span className='text-2xl lg:text-4xl font-light'>UYEN</span>
             </div>
 
@@ -55,23 +65,33 @@ export default function Home() {
             />
 
             <ul className='nav-list lg:relative lg:top-auto lg:flex justify-between items-center text-sm mr-6 bg-[var(--color-primary-black)]'>
-              <li className=''>
-                <a href='#home'>Home</a>
+              <li className='nav-item'>
+                <Link to='home' smooth={true} duration={800}>
+                  Home
+                </Link>
               </li>
-              <li className=''>
-                <a href='#about'>About</a>
-              </li>
-
-              <li className=''>
-                <a href='#service'>Service</a>
-              </li>
-
-              <li className=''>
-                <a href='#project'>Project</a>
+              <li className='nav-item'>
+                <Link to='about' smooth={true} duration={800}>
+                  About
+                </Link>
               </li>
 
-              <li className=''>
-                <a href='#contact'>Contact</a>
+              <li className='nav-item'>
+                <Link to='services' smooth={true} duration={800}>
+                  Service
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link to='project' smooth={true} duration={800}>
+                  Project
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link to='contact' smooth={true} duration={800}>
+                  Contact
+                </Link>
               </li>
             </ul>
 
@@ -105,7 +125,9 @@ export default function Home() {
           {/* END HEADER */}
 
           {/* HOME SECTION */}
-          <div className='home-page section-wrapper pt-[var(--header-height-xs)] sm:pt-[var(--header-height-sm)] lg:pt-[var(--header-height-lg)] pb-10 bg-[var(--background-section)] text-white'>
+          <section
+            id='home'
+            className='home-page section-wrapper pt-[var(--header-height-xs)] sm:pt-[var(--header-height-sm)] lg:pt-[var(--header-height-lg)] pb-10 bg-[var(--background-section)] text-white'>
             <div className='block lg:flex gap-10'>
               <div className='w-full lg:w-[50%]'>
                 <div className='intro-wrapper pb-2 sm:pb-9 pt-9'>
@@ -149,7 +171,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
           {/* HOME SECTION */}
 
           {/* SERVICES SECTION */}
