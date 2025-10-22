@@ -1,0 +1,42 @@
+/* MY SERVICES CSS*/
+.services-title {
+  animation: slide-up 3s ease-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.my-services-sub-title.show {
+  animation: slide-up-20 3s ease-out forwards;
+}
+
+.my-services__list-item {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.my-services__list-item.show {
+  animation: slide-in-left 1s ease-in forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* END MY SERVICES CSS*/

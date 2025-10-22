@@ -1,0 +1,30 @@
+.about__image-boder::before {
+  position: absolute;
+  content: '';
+  top: -20px;
+  left: 50px;
+  width: calc(100% - 30px);
+  height: calc(100% - 64px);
+  border-top: 20px solid var(--color-primary-green);
+  border-right: 20px solid var(--color-primary-green);
+}
+
+.about__image-wrapper.show {
+  animation: slide-in 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.about__sub-title.show {
+  animation: slide-up-20 3s ease-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(10%);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
