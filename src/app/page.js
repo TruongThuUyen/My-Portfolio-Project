@@ -1,12 +1,12 @@
 'use client';
+import AboutMe from '@/components/about-me/AboutMe';
+import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
+import Services from '@/components/services/Services';
 import '@/styles/page.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
-import Services from '@/components/services/Services';
-import AboutMe from '@/components/about-me/AboutMe';
-import { Link } from 'react-scroll';
-import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -152,7 +152,7 @@ export default function Home() {
                   className='btn-slide 
                     relative mt-5 z-1
                     py-2.5 px-5 text-center 
-                    text-md
+                    text-sm sm:text-md
                     text-[var(--color-primary-black)] bg-[var(--color-primary-green)] 
                     transition-[var(--tran-05)] 
                     overflow-hidden cursor-pointer

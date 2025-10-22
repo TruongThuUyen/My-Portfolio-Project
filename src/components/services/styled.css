@@ -15,12 +15,16 @@
   }
 }
 
-.my-service__list-item {
+.my-services-sub-title.show {
+  animation: slide-up-20 3s ease-out forwards;
+}
+
+.my-services__list-item {
   opacity: 0;
   transform: translateX(-100px);
 }
 
-.my-service__list-item.show {
+.my-services__list-item.show {
   animation: slide-in-left 1s ease-in forwards;
 }
 
