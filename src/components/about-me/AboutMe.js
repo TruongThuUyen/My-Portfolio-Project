@@ -1,5 +1,6 @@
 'use client';
 import personalImage from '../../../public/images/personal-image.jpg';
+import EducationAndSkills from '../education-skills/EducationAndSkill';
 import './styled.css';
 
 import { useEffect } from 'react';

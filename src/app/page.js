@@ -6,6 +6,7 @@ import Loading from './loading';
 import Services from '@/components/services/Services';
 import AboutMe from '@/components/about-me/AboutMe';
 import { Link } from 'react-scroll';
+import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,11 +17,6 @@ export default function Home() {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
-
-  // const handleScroll = (id) => {
-  //   const section = document.getElementById(id);
-  //   section?.scrollIntoView({ behavior: 'smooth' });
-  // };
 
   return (
     <main className='h-[2000px]'>
@@ -181,6 +177,10 @@ export default function Home() {
           {/* ABOUT ME SECTION */}
           <AboutMe />
           {/* END ABOUT ME SECTION */}
+
+          {/* EDUCATION AND SKILL SECTION */}
+          <EducationAndSkills />
+          {/* END EDUCATION AND SKILL SECTION */}
         </section>
       )}
     </main>

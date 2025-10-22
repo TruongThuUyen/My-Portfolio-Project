@@ -1,0 +1,47 @@
+:root {
+  --skill-width: 0%;
+}
+
+.education__title.show,
+.education__text.show {
+  animation: slide-in-up 1.2s linear forwards;
+}
+
+@keyframes slide-in-up {
+  0% {
+    margin-top: 60px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.skill-item__progress-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.skill-item__progress {
+  height: 4px;
+  border-radius: 20px;
+  width: var(--skill-width);
+  background-color: var(--color-primary-green);
+}
+
+.skill-item__progress.show {
+  animation: progress 1.5s linear forwards;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: var(--skill-width);
+  }
+}
