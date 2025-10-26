@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
+import PersonalProjects from '@/components/projects/Projects';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -171,16 +172,20 @@ export default function Home() {
           {/* HOME SECTION */}
 
           {/* SERVICES SECTION */}
-          <Services />
+          {/* <Services /> */}
           {/* END SERVICES SECTION */}
 
           {/* ABOUT ME SECTION */}
-          <AboutMe />
+          {/* <AboutMe /> */}
           {/* END ABOUT ME SECTION */}
 
           {/* EDUCATION AND SKILL SECTION */}
-          <EducationAndSkills />
+          {/* <EducationAndSkills /> */}
           {/* END EDUCATION AND SKILL SECTION */}
+
+          {/* PERSONAL PROJECTS SECTION */}
+          <PersonalProjects />
+          {/* END  PERSONAL PROJECTS SECTION */}
         </section>
       )}
     </main>
