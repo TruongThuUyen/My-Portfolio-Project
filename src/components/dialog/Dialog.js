@@ -1,9 +1,10 @@
 'use-client';
 import { ExternalLink, Minimize2 } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
 import './styled.css';
 
-export const Dialog = ({ project, onClose }) => {
+export const Dialog = React.memo(({ project, onClose }) => {
   console.log(project);
   return (
     <div className='dialog fixed inset-0 z-1 bg-black/40 flex justify-center items-center transform '>
@@ -45,4 +46,4 @@ export const Dialog = ({ project, onClose }) => {
       </div>
     </div>
   );
-};
+});

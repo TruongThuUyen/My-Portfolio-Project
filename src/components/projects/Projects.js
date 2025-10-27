@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Dialog } from '../dialog/Dialog';
 import './styled.css';
 
@@ -61,9 +61,9 @@ export default function PersonalProjects() {
     setSelectedProject(project);
   };
 
-  const hideDialog = () => {
+  const hideDialog = useCallback(() => {
     setSelectedProject(null);
-  };
+  }, []);
   return (
     <section className='section-wrapper pt-20 pb-10'>
       <p className='section-title'>Personal Projects</p>
