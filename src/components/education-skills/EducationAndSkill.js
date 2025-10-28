@@ -144,10 +144,12 @@ export default function EducationAndSkills() {
     );
 
     const skillItemsEl = document.querySelectorAll('.skill-item__progress');
+    const jobItemsEl = document.querySelectorAll('.experience-item');
     const educationTitle = document.querySelectorAll('.education__title');
     const educationText = document.querySelectorAll('.education__text');
 
     skillItemsEl.forEach((el) => observer.observe(el));
+    jobItemsEl.forEach((el) => observer.observe(el));
     observer.observe(educationTitle[0]);
     observer.observe(educationText[0]);
 
@@ -159,11 +161,13 @@ export default function EducationAndSkills() {
       id='skills'
       className='section-wrapper pt-20 pb-10 bg-[var(--background-section)] text-white'>
       <p className='section-title text-center'>EDUCATION & SKILL</p>
-      <h2 className='max-w-[1024px] mx-auto leading-10 lg:leading-16 text-center text-3xl lg:text-5xl font-medium text-[var(--text-secondary-color)]  '>
-        Bridging platforms
-        <br />
-        showcasing technical mastery
-      </h2>
+      <div className='title-mask overflow-hidden'>
+        <h2 className='max-w-[1024px] mx-auto leading-10 lg:leading-16 text-center text-3xl lg:text-5xl font-medium text-[var(--text-secondary-color)]  '>
+          Bridging platforms
+          <br />
+          showcasing technical mastery
+        </h2>
+      </div>
 
       <ul className='experience-list grid grid-cols-1 lg:grid-cols-2 my-10'>
         {experienceList.map((job) => (

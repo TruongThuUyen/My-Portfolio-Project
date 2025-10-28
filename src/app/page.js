@@ -172,15 +172,15 @@ export default function Home() {
           {/* HOME SECTION */}
 
           {/* SERVICES SECTION */}
-          {/* <Services /> */}
+          <Services />
           {/* END SERVICES SECTION */}
 
           {/* ABOUT ME SECTION */}
-          {/* <AboutMe /> */}
+          <AboutMe />
           {/* END ABOUT ME SECTION */}
 
           {/* EDUCATION AND SKILL SECTION */}
-          {/* <EducationAndSkills /> */}
+          <EducationAndSkills />
           {/* END EDUCATION AND SKILL SECTION */}
 
           {/* PERSONAL PROJECTS SECTION */}

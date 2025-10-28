@@ -2,6 +2,7 @@
   --skill-width: 0%;
 }
 
+.experience-item.show,
 .education__title.show,
 .education__text.show {
   animation: slide-in-up 1.2s linear forwards;
