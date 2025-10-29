@@ -1,15 +1,15 @@
 'use client';
 import AboutMe from '@/components/about-me/AboutMe';
 import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
+import FeedBack from '@/components/feedback/FeedBack';
+import PersonalProjects from '@/components/projects/Projects';
 import Services from '@/components/services/Services';
+import TextMarquee from '@/components/text-marquee/TextMarquee';
 import '@/styles/page.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
-import PersonalProjects from '@/components/projects/Projects';
-import TextMarquee from '@/components/text-marquee/TextMarquee';
-import FeedBack from '@/components/feedback/FeedBack';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -189,6 +189,10 @@ export default function Home() {
           {/* TEXT MARQUEE SECTION */}
           <TextMarquee />
           {/* END TEXT MARQUEE SECTION */}
+
+          {/* FEEDBACK  */}
+          <FeedBack />
+          {/* END FEEDBACK  */}
         </section>
       )}
     </main>

@@ -4,7 +4,7 @@ import './styled.css';
 
 // Import Swiper styles
 import { Quote } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { Autoplay, EffectCoverflow } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -38,60 +38,63 @@ const feedBackList = [
 ];
 
 export default function FeedBack() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+  // issue: swiper undefined -> save swiper in state to resolve it
+  const swiperRef = useRef(null);
 
-  const handleMouseEnter = (swiper) => {
-    swiper.autoplay.stop();
+  const handleMouseEnter = () => {
+    swiperRef.current?.autoplay?.stop();
   };
 
-  const handleMouseLeave = (swiper) => {
-    swiper.autoplay.start();
+  const handleMouseLeave = () => {
+    swiperRef.current?.autoplay?.start();
   };
 
   return (
-    <div id='projects' className='section-wrapper pt-20 pb-10'>
-      <Swiper
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        touchMoveStopPropagation={true}
-        modules={[EffectCoverflow, Autoplay]}
-        spaceBetween={30}
-        freeMode={true}
-        className='mySwiper'
-        breakpoints={{
-          // screen equals or less than 320px
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          // screen equals or less than 760px
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-        }}
-        onSwiper={(swiper) => {
-          swiper.el.addEventListener('mouseenter', () => handleMouseEnter(swiper));
-          swiper.el.addEventListener('mouseleave', () => handleMouseLeave(swiper));
-        }}>
-        {feedBackList?.map((project) => (
-          <SwiperSlide key={project.id}>
-            <div className='project__card-item flex mx-auto border-1 border-[rgba(255, 255, 255, 0.2)] overflow-hidden'>
-              <p className='my-4 md:my-5 px-5 pt-5 md:pt-7 text-[13px] md:text-sm text-[var(--text-primary-color)]'>
-                {project.description}
-              </p>
-              <div className='flex items-end justify-center mx-6 pb-6'>
-                <Quote className='size-7 md:size-9 text-[var(--color-primary-green)] fill-[var(--color-primary-green)]' />
+    <div id='projects' className='section-wrapper pt-10 md:pt-20 pb-10'>
+      <h2 className='mb-6 md:mb-10 font-mono font-bold text-center capitalize text-3xl sm:text-4xl md:text-5xl text-[var(--color-primary-green)] '>
+        How do people see me?
+      </h2>
+      <div onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()}>
+        <Swiper
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          touchMoveStopPropagation={true}
+          modules={[EffectCoverflow, Autoplay]}
+          spaceBetween={30}
+          freeMode={true}
+          className='mySwiper'
+          breakpoints={{
+            // screen equals or less than 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            // screen equals or less than 760px
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}>
+          {feedBackList?.map((project) => (
+            <SwiperSlide key={project.id}>
+              <div className='project__card-item w-full flex border-1 border-[rgba(255, 255, 255, 0.2)] overflow-hidden'>
+                <p className='my-4 md:my-5 px-5 pt-5 md:pt-7 text-[13px] md:text-sm text-[var(--text-primary-color)]'>
+                  {project.description}
+                </p>
+                <div className='flex items-end justify-center mx-6 pb-6'>
+                  <Quote className='size-7 md:size-9 text-[var(--color-primary-green)] fill-[var(--color-primary-green)]' />
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }
