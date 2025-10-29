@@ -80,7 +80,7 @@ export default function Home() {
               </li>
 
               <li className='nav-item'>
-                <Link to='project' smooth={true} duration={800}>
+                <Link to='projects' smooth={true} duration={800}>
                   Project
                 </Link>
               </li>

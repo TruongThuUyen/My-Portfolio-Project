@@ -65,7 +65,7 @@ export default function PersonalProjects() {
     setSelectedProject(null);
   }, []);
   return (
-    <section className='section-wrapper pt-20 pb-10'>
+    <section id='projects' className='section-wrapper pt-20 pb-10'>
       <p className='section-title'>Personal Projects</p>
       <div className='project-list flex flex-wrap'>
         {projectList?.map((project) => (
