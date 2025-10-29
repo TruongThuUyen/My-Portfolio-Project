@@ -8,6 +8,8 @@ import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
 import PersonalProjects from '@/components/projects/Projects';
+import TextMarquee from '@/components/text-marquee/TextMarquee';
+import FeedBack from '@/components/feedback/FeedBack';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,14 +22,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='h-[2000px]'>
+    <main>
       {isLoading ? (
         <Loading />
       ) : (
-        <section
-          className='w-full h-screen 
-      
-      '>
+        <section className='w-full'>
           {/* HEADER */}
           <header
             className='fixed top-0  h-[54px] sm:h-[60px] lg:h-[78px] 
@@ -186,6 +185,10 @@ export default function Home() {
           {/* PERSONAL PROJECTS SECTION */}
           <PersonalProjects />
           {/* END  PERSONAL PROJECTS SECTION */}
+
+          {/* TEXT MARQUEE SECTION */}
+          <TextMarquee />
+          {/* END TEXT MARQUEE SECTION */}
         </section>
       )}
     </main>
