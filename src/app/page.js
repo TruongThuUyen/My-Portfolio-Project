@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
+import Contact from '@/components/contact/Contact';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -127,7 +128,7 @@ export default function Home() {
             <div className='block lg:flex gap-10'>
               <div className='w-full lg:w-[50%]'>
                 <div className='intro-wrapper pb-2 sm:pb-9 pt-9'>
-                  <h1 className='intro__title'>Hi, I'M Uyen! Createtive</h1>
+                  <h1 className='intro__title'>Hi, I'M Uyen! Creative</h1>
                   <div className='intro__animation-typing'>
                     <div className='second'>
                       <span>Front-END Developer</span>
@@ -190,9 +191,13 @@ export default function Home() {
           <TextMarquee />
           {/* END TEXT MARQUEE SECTION */}
 
-          {/* FEEDBACK  */}
-          <FeedBack />
-          {/* END FEEDBACK  */}
+          {/* FEEDBACK SECTION */}
+          {/* <FeedBack /> */}
+          {/* END FEEDBACK  SECTION*/}
+
+          {/* CONTACT SECTION  */}
+          <Contact />
+          {/* END CONTACT SECTION  */}
         </section>
       )}
     </main>
