@@ -11,6 +11,7 @@ import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
 import Contact from '@/components/contact/Contact';
+import Footer from '@/components/footer/Footer';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -192,12 +193,16 @@ export default function Home() {
           {/* END TEXT MARQUEE SECTION */}
 
           {/* FEEDBACK SECTION */}
-          {/* <FeedBack /> */}
+          <FeedBack />
           {/* END FEEDBACK  SECTION*/}
+
+          <div className='mt-10 h-20 bg-gradient-to-b from-black to-[#0aff9d]/26'></div>
 
           {/* CONTACT SECTION  */}
           <Contact />
           {/* END CONTACT SECTION  */}
+
+          <Footer />
         </section>
       )}
     </main>
