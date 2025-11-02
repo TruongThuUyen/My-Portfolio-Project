@@ -1,15 +1,18 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import GoKartsImage from '../../../public/images/go-kart.png';
+import PersonalPorfolioImage from '../../../public/images/personal-portfolio.png';
+import DefaultThumbnail from '../../../public/images/thumbnail.png';
+import SocialMediaImage from '../../../public/images/yt.png';
 import { Dialog } from '../dialog/Dialog';
 import './styled.css';
 
 const projectList = [
   {
     id: 1,
-    name: 'Project',
+    name: 'Portfolio Frontend Project',
     description:
       'A personal portfolio website built with React and Tailwind CSS, focusing on performance optimization and interactive UI/UX design.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1530092285049-1c42085fd395?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlJTIwZmxvd2VyfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000',
+    imageUrl: PersonalPorfolioImage,
     time: '03/2025',
     timeEnd: '03/2025',
     webLink: 'https://github.com/',
@@ -17,11 +20,10 @@ const projectList = [
   },
   {
     id: 2,
-    name: 'Portfolio Frontend Project',
+    name: 'Go Kart Landing',
     description:
-      'A personal portfolio website built with React and Tailwind CSS, focusing on performance optimization and interactive UI/UX design.',
-    imageUrl:
-      'https://media.istockphoto.com/id/2196545732/photo/cosmos-blooming-in-a-park.jpg?s=612x612&w=0&k=20&c=f4j4ARFK17AWviTM0ubzdQdO3EsYwD1IqZ0mt-cy_rw=',
+      'A website built using pure HTML, native JavaScript, and Tailwind CSS. It notably utilizes the CSS clip-path technique to create custom shapes and geometric effects instead of relying on static, pre-made images',
+    imageUrl: GoKartsImage,
     time: '10/2025',
     timeEnd: '03/2025',
     webLink: 'https://github.com/',
@@ -32,8 +34,7 @@ const projectList = [
     name: 'Film Info Project',
     description:
       'A movie information website clone developed with ReactJS and SCSS to practice integrating RESTful APIs and working with a NodeJS backend. The project is hosted on GitHub.',
-    imageUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5aLWFQj1HAPxf_I8PU3GF4euRUz8yw4mRYftNGiT6zeHT5PiqE4uRB28EqBuJaROatS0&usqp=CAU',
+    imageUrl: SocialMediaImage,
     time: '2022',
     timeEnd: '03/2025',
     webLink: 'https://github.com/',
@@ -44,8 +45,7 @@ const projectList = [
     name: 'Social Media Project',
     description:
       'A social media practice project developed with ReactJS, RESTful APIs, and Firebase, focusing on frontend logic and responsive UI design.',
-    imageUrl:
-      'https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?cs=srgb&dl=pexels-jonaskakaroto-736230.jpg&fm=jpg',
+    imageUrl: '',
     time: '2022',
     timeEnd: '03/2025',
     webLink: 'https://github.com/',
@@ -55,6 +55,25 @@ const projectList = [
 
 export default function PersonalProjects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  console.log(projectList);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const projectTitle = document.querySelectorAll('.project-title');
+    observer.observe(projectTitle[0]);
+
+    return () => observer.disconnect();
+  }, []);
 
   const showDialog = (id) => {
     const project = projectList.find((p) => p.id === id);
@@ -64,14 +83,21 @@ export default function PersonalProjects() {
   const hideDialog = useCallback(() => {
     setSelectedProject(null);
   }, []);
+
   return (
     <section id='projects' className='section-wrapper pt-20 pb-10'>
-      <p className='section-title'>Personal Projects</p>
+      <p className='section-title max-h-9 overflow-hidden'>
+        <span className='project-title inline-block'>Personal Projects</span>
+      </p>
       <div className='project-list flex flex-wrap'>
         {projectList?.map((project) => (
           <div key={project.id} className='project-item relative cursor-pointer overflow-hidden'>
             <div className='overlay'></div>
-            <img src={project.imageUrl} alt={project.name} className='project-image' />
+            <img
+              src={project.imageUrl.src || DefaultThumbnail.src}
+              alt={project.name}
+              className='project-image'
+            />
             <div className='project-item__content absolute left-0 pl-3 pt-4 text-center'>
               <h4 className=' text-md lg:text-xl text-[var(--color-primary-green)] font-bold capitalize'>
                 {project.name}

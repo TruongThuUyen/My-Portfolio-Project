@@ -5,9 +5,8 @@ import React from 'react';
 import './styled.css';
 
 export const Dialog = React.memo(({ project, onClose }) => {
-  console.log(project);
   return (
-    <div className='dialog fixed inset-0 z-1 bg-black/40 flex justify-center items-center transform '>
+    <div className='dialog fixed inset-0 z-10 bg-black/40 flex justify-center items-center transform '>
       <div
         className={`dialog-container absolute w-[76%] md:w-[60%] py-4 px-6 bg-[var(--color-surface-secondary)] 
         rounded-xl overflow-hidden text-black ${!!project ? 'active' : 'close'}`}>

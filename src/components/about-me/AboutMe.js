@@ -31,7 +31,7 @@ export default function AboutMe() {
       <p className='section-title'>About Me</p>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 my-5'>
         <div className='flex flex-col'>
-          <h2 className='about__sub-title text-3xl md:text-5xl font-medium text-[var(--text-secondary-color)] max-w-[1024px] my-8 leading-none'>
+          <h2 className='about__sub-title text-3xl md:text-5xl font-medium text-[var(--text-secondary-color)] max-w-[1024px] md:my-8 leading-10 md:leading-14'>
             Transforming ideas into interactive digital solutions
           </h2>
           <p className='text-xl md:text-3xl'>I'm Thu Uyen</p>

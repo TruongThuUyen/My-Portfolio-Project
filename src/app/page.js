@@ -1,7 +1,9 @@
 'use client';
 import AboutMe from '@/components/about-me/AboutMe';
+import Contact from '@/components/contact/Contact';
 import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
-import FeedBack from '@/components/feedback/FeedBack';
+import SwiperComponent from '@/components/feedback/SwiperComponent';
+import Footer from '@/components/footer/Footer';
 import PersonalProjects from '@/components/projects/Projects';
 import Services from '@/components/services/Services';
 import TextMarquee from '@/components/text-marquee/TextMarquee';
@@ -10,11 +12,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
-import Contact from '@/components/contact/Contact';
-import Footer from '@/components/footer/Footer';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,7 +37,7 @@ export default function Home() {
               <Link
                 to='home'
                 smooth={true}
-                duration={800}
+                duration={1500}
                 className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black hover:cursor-pointer'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -64,30 +64,30 @@ export default function Home() {
 
             <ul className='nav-list lg:relative lg:top-auto lg:flex justify-between items-center text-sm mr-6 bg-[var(--color-primary-black)]'>
               <li className='nav-item'>
-                <Link to='home' smooth={true} duration={800}>
+                <Link to='home' smooth={true} duration={1500}>
                   Home
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to='about' smooth={true} duration={800}>
+                <Link to='about' smooth={true} duration={1500}>
                   About
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='services' smooth={true} duration={800}>
-                  Service
+                <Link to='services' smooth={true} duration={1500}>
+                  Services
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='projects' smooth={true} duration={800}>
-                  Project
+                <Link to='projects' smooth={true} duration={1500}>
+                  Projects
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='contact' smooth={true} duration={800}>
+                <Link to='contact' smooth={true} duration={1500}>
                   Contact
                 </Link>
               </li>
@@ -193,7 +193,7 @@ export default function Home() {
           {/* END TEXT MARQUEE SECTION */}
 
           {/* FEEDBACK SECTION */}
-          <FeedBack />
+          <SwiperComponent />
           {/* END FEEDBACK  SECTION*/}
 
           <div className='mt-10 h-20 bg-gradient-to-b from-black to-[#0aff9d]/26'></div>

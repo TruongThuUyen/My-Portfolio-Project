@@ -22,7 +22,7 @@ export default function Contact() {
           <div className='flex flex-col gap-1 text-[var(--text-primary-color)]'>
             <p className='font-bold text-white text-md sm:text-xl'>Send me mail</p>
             <div>
-              <p className='text-sm hover:cursor-pointer hover:text-[var(--color-primary-green)] transition-color duration-200'>
+              <p className='text-sm cursor-default hover:text-[var(--color-primary-green)] transition-color duration-200'>
                 uyenthutruong0105@gmail.com
               </p>
             </div>
@@ -35,8 +35,8 @@ export default function Contact() {
           <div className='flex flex-col gap-1 text-[var(--text-primary-color)]'>
             <p className='font-bold text-white text-md sm:text-xl'>Lets talk me</p>
             <div>
-              <p className='text-sm hover:cursor-pointer hover:text-[var(--color-primary-green)] transition-color duration-200'>
-                2118 Thornridge Cir. Syracuse, Connecticut 35624
+              <p className='text-sm cursor-default hover:text-[var(--color-primary-green)] transition-color duration-200'>
+                0961554333
               </p>
             </div>
           </div>
