@@ -13,8 +13,8 @@ const projectList = [
     description:
       'A personal portfolio website built with React and Tailwind CSS, focusing on performance optimization and interactive UI/UX design.',
     imageUrl: PersonalPorfolioImage,
-    time: '03/2025',
-    timeEnd: '03/2025',
+    time: '10/2025',
+    timeEnd: null,
     webLink: 'https://github.com/',
     githubLink: 'https://github.com/',
   },
@@ -24,8 +24,8 @@ const projectList = [
     description:
       'A website built using pure HTML, native JavaScript, and Tailwind CSS. It notably utilizes the CSS clip-path technique to create custom shapes and geometric effects instead of relying on static, pre-made images',
     imageUrl: GoKartsImage,
-    time: '10/2025',
-    timeEnd: '03/2025',
+    time: '03/2025',
+    timeEnd: null,
     webLink: 'https://github.com/',
     githubLink: 'https://github.com/',
   },
@@ -37,7 +37,7 @@ const projectList = [
     imageUrl: SocialMediaImage,
     time: '2022',
     timeEnd: '03/2025',
-    webLink: 'https://github.com/',
+    webLink: '',
     githubLink: 'https://github.com/',
   },
   {
@@ -48,7 +48,7 @@ const projectList = [
     imageUrl: '',
     time: '2022',
     timeEnd: '03/2025',
-    webLink: 'https://github.com/',
+    webLink: '',
     githubLink: 'https://github.com/',
   },
 ];

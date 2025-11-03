@@ -17,7 +17,7 @@ export const Dialog = React.memo(({ project, onClose }) => {
           {project.name}
         </h4>
         <p className='py-1 text-center text-xs font-bold text-white'>
-          {project.time} - {project.timeEnd}
+          {project.time} {project.timeEnd ? `- ${project.timeEnd}` : ''}
         </p>
         <p className='my-4 text-[13px] sm:text-sm text-[var(--text-primary-color)] overflow-hidden leading-tight'>
           {project.description}
@@ -32,7 +32,7 @@ export const Dialog = React.memo(({ project, onClose }) => {
             Git hub
           </Link>
         </p>
-        <p className='flex gap-2 items-center text-white my-2'>
+        <div className='flex gap-2 items-center text-white my-2 relative group'>
           <span>
             <ExternalLink className='size-4' />
           </span>
@@ -41,7 +41,14 @@ export const Dialog = React.memo(({ project, onClose }) => {
             className='text-sm text-[var(--color-primary-green)] hover:text-[var(--text-primary-color)] hover:underline transform ease-in duration-200'>
             Web Link
           </Link>
-        </p>
+          {!project.webLink && (
+            <div className='absolute bottom-0 left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block'>
+              <div className='bg-[#111827] text-white text-sm px-3 py-2 rounded-xl shadow-lg border border-gray-700 animate-fadeIn'>
+                🚧 Oops. Server's down, back soon.
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
