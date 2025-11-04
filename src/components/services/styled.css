@@ -15,7 +15,7 @@
   }
 }
 
-.my-services-sub-title.show {
+.my-services__sub-title.show {
   animation: slide-up-20 3s ease-out forwards;
 }
 

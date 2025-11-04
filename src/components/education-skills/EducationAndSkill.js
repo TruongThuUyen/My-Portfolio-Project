@@ -130,13 +130,60 @@ const skillsList = [
   },
 ];
 
+const prepareLineAnimtion = (lineEl) => {
+  if (lineEl.querySelector('.anim_char')) return;
+
+  const rawContent = lineEl.innerHTML.trim();
+  lineEl.innerHTML = '';
+
+  const parts = rawContent.replace(/<br\s*\/?>/gi, '|BR|').split(/(\s+|\|BR\|)/);
+
+  let charIndex = 0;
+  const delayPerChar = 0.02;
+
+  parts.forEach((part) => {
+    if (!part || part.length === 0) {
+      return;
+    }
+
+    if (part === '|BR|') {
+      lineEl.appendChild(document.createElement('br'));
+    } else if (part.match(/^\s+$/)) {
+      lineEl.append(document.createTextNode(part));
+    } else {
+      for (let i = 0; i < part.length; i++) {
+        const char = part[i];
+
+        const charDiv = document.createElement('div');
+        charDiv.classList.add('anim_char');
+        charDiv.textContent = char;
+        charDiv.style.position = 'relative';
+        charDiv.style.display = 'inline-block';
+
+        charDiv.style.animationDelay = `${charIndex * delayPerChar}s`;
+
+        lineEl.appendChild(charDiv);
+        charIndex++;
+      }
+    }
+  });
+};
+
 export default function EducationAndSkills() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            const target = entry.target;
+            if (target.classList.contains('anim_line')) {
+              prepareLineAnimtion(target);
+              target.classList.add('show');
+
+              observer.unobserve(target);
+            } else {
+              target.classList.add('show');
+            }
           }
         });
       },
@@ -146,10 +193,13 @@ export default function EducationAndSkills() {
     const skillItemsEl = document.querySelectorAll('.skill-item__progress');
     const educationTitle = document.querySelectorAll('.education__title');
     const educationText = document.querySelectorAll('.education__text');
+    const lineElement = document.querySelector('.anim_line');
 
     skillItemsEl.forEach((el) => observer.observe(el));
     observer.observe(educationTitle[0]);
     observer.observe(educationText[0]);
+
+    if (lineElement) observer.observe(lineElement);
 
     return () => observer.disconnect();
   }, []);
@@ -159,7 +209,7 @@ export default function EducationAndSkills() {
       id='skills'
       className='section-wrapper pt-20 pb-10 bg-[var(--background-section)] text-white'>
       <p className='section-title text-center'>EDUCATION & SKILL</p>
-      <h2 className='max-w-[1024px] mx-auto leading-10 lg:leading-16 text-center text-3xl lg:text-5xl font-medium text-[var(--text-secondary-color)]  '>
+      <h2 className='anim_line max-w-[1024px] mx-auto text-center text-3xl md:text-5xl font-medium text-[var(--text-secondary-color)] leading-10 md:leading-14'>
         Bridging platforms
         <br />
         showcasing technical mastery
@@ -193,7 +243,7 @@ export default function EducationAndSkills() {
 
       <div className=' md:my-[60px]'>
         <div className='education__title-wrapper my-5 h-10 overflow-hidden'>
-          <h3 className='education__title text-xl md:text-2xl text-[var(--color-primary-green)] uppercase '>
+          <h3 className='education__title text-xl md:text-2xl text-[var(--color-primary-green)] uppercase'>
             EDUCATION
           </h3>
         </div>

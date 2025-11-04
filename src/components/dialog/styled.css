@@ -1,0 +1,25 @@
+.dialog-container {
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.dialog-container.active {
+  top: 50%;
+  opacity: 1;
+  animation: scale-fade-modal 300ms ease-in-out;
+}
+
+@keyframes scale-fade-modal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}

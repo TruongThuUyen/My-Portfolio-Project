@@ -50,7 +50,7 @@ export default function ServicesSection() {
   return (
     <section id='services' className='section-wrapper pt-20 pb-10'>
       <p className='section-title text-center'>My services</p>
-      <h2 className='my-services__sub-title text-3xl md:text-5xl font-medium text-center text-[var(--text-secondary-color)] max-w-[1024px] mx-auto'>
+      <h2 className='my-services__sub-title max-w-[1024px] mx-auto text-3xl md:text-5xl font-medium text-center text-[var(--text-secondary-color)] leading-10 md:leading-14'>
         Transforming ideas into robust solutions with code and platform innovation.
       </h2>
       <ul className='my-service__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20'>

@@ -1,7 +1,12 @@
 'use client';
 import AboutMe from '@/components/about-me/AboutMe';
+import Contact from '@/components/contact/Contact';
 import EducationAndSkills from '@/components/education-skills/EducationAndSkill';
+import SwiperComponent from '@/components/feedback/SwiperComponent';
+import Footer from '@/components/footer/Footer';
+import PersonalProjects from '@/components/projects/Projects';
 import Services from '@/components/services/Services';
+import TextMarquee from '@/components/text-marquee/TextMarquee';
 import '@/styles/page.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
@@ -9,7 +14,7 @@ import avatar from '../../public/images/avatar.jpg';
 import Loading from './loading';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,14 +24,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='h-[2000px]'>
+    <main>
       {isLoading ? (
         <Loading />
       ) : (
-        <section
-          className='w-full h-screen 
-      
-      '>
+        <section className='w-full'>
           {/* HEADER */}
           <header
             className='fixed top-0  h-[54px] sm:h-[60px] lg:h-[78px] 
@@ -35,7 +37,7 @@ export default function Home() {
               <Link
                 to='home'
                 smooth={true}
-                duration={800}
+                duration={1500}
                 className='flex justify-center items-center h-full px-1.5 sm:px-4 bg-[var(--color-primary-green)] text-black hover:cursor-pointer'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -62,30 +64,30 @@ export default function Home() {
 
             <ul className='nav-list lg:relative lg:top-auto lg:flex justify-between items-center text-sm mr-6 bg-[var(--color-primary-black)]'>
               <li className='nav-item'>
-                <Link to='home' smooth={true} duration={800}>
+                <Link to='home' smooth={true} duration={1500}>
                   Home
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to='about' smooth={true} duration={800}>
+                <Link to='about' smooth={true} duration={1500}>
                   About
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='services' smooth={true} duration={800}>
-                  Service
+                <Link to='services' smooth={true} duration={1500}>
+                  Services
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='project' smooth={true} duration={800}>
-                  Project
+                <Link to='projects' smooth={true} duration={1500}>
+                  Projects
                 </Link>
               </li>
 
               <li className='nav-item'>
-                <Link to='contact' smooth={true} duration={800}>
+                <Link to='contact' smooth={true} duration={1500}>
                   Contact
                 </Link>
               </li>
@@ -127,7 +129,7 @@ export default function Home() {
             <div className='block lg:flex gap-10'>
               <div className='w-full lg:w-[50%]'>
                 <div className='intro-wrapper pb-2 sm:pb-9 pt-9'>
-                  <h1 className='intro__title'>Hi, I'M Uyen! Createtive</h1>
+                  <h1 className='intro__title'>Hi, I'M Uyen! Creative</h1>
                   <div className='intro__animation-typing'>
                     <div className='second'>
                       <span>Front-END Developer</span>
@@ -181,6 +183,26 @@ export default function Home() {
           {/* EDUCATION AND SKILL SECTION */}
           <EducationAndSkills />
           {/* END EDUCATION AND SKILL SECTION */}
+
+          {/* PERSONAL PROJECTS SECTION */}
+          <PersonalProjects />
+          {/* END  PERSONAL PROJECTS SECTION */}
+
+          {/* TEXT MARQUEE SECTION */}
+          <TextMarquee />
+          {/* END TEXT MARQUEE SECTION */}
+
+          {/* FEEDBACK SECTION */}
+          <SwiperComponent />
+          {/* END FEEDBACK  SECTION*/}
+
+          <div className='mt-10 h-20 bg-gradient-to-b from-black to-[#0aff9d]/26'></div>
+
+          {/* CONTACT SECTION  */}
+          <Contact />
+          {/* END CONTACT SECTION  */}
+
+          <Footer />
         </section>
       )}
     </main>

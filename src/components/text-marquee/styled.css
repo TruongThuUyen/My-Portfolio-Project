@@ -1,0 +1,49 @@
+.stoke-ticket {
+  padding: 26px 0;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  --gap: 2.6rem;
+  gap: var(--gap);
+}
+
+.stoke-ticket:hover ul {
+  animation-play-state: paused;
+}
+
+.stoke-ticket ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.6rem;
+  animation: marquee 6s linear infinite;
+  flex-shrink: 0;
+}
+
+.stoke-ticket ul li {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-fill-color: #2de39a;
+  -webkit-text-stroke: 1px #000;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .stoke-ticket {
+    padding: 20px 0;
+  }
+  .stoke-ticket ul li {
+    font-size: 2rem;
+  }
+}
