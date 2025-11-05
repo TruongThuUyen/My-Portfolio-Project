@@ -42,8 +42,8 @@ export const Dialog = React.memo(({ project, onClose }) => {
             Web Link
           </Link>
           {!project.webLink && (
-            <div className='absolute bottom-0 left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block'>
-              <div className='bg-[#111827] text-white text-sm px-3 py-2 rounded-xl shadow-lg border border-gray-700 animate-fadeIn'>
+            <div className='absolute bottom-[-10px] left-[170px] sm:left-1/2 md:left-[230px] -translate-x-1/2 mb-2'>
+              <div className='hidden group-hover:block bg-[#111827] text-white text-sm px-3 py-2 rounded-xl shadow-lg border border-gray-700 animate-fadeIn'>
                 🚧 Oops. Server's down, back soon.
               </div>
             </div>

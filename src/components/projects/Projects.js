@@ -15,8 +15,8 @@ const projectList = [
     imageUrl: PersonalPorfolioImage,
     time: '10/2025',
     timeEnd: null,
-    webLink: 'https://github.com/',
-    githubLink: 'https://github.com/',
+    webLink: 'https://personal-porfolio-mocha.vercel.app/',
+    githubLink: 'https://github.com/TruongThuUyen/personal-porfolio',
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const projectList = [
     imageUrl: GoKartsImage,
     time: '03/2025',
     timeEnd: null,
-    webLink: 'https://github.com/',
-    githubLink: 'https://github.com/',
+    webLink: 'https://truongthuuyen.github.io/Css-testing-project/',
+    githubLink: 'https://github.com/TruongThuUyen/Go-karts-landing',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projectList = [
     time: '2022',
     timeEnd: '03/2025',
     webLink: '',
-    githubLink: 'https://github.com/',
+    githubLink: 'https://github.com/TruongThuUyen/Web_Film_FE',
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const projectList = [
     time: '2022',
     timeEnd: '03/2025',
     webLink: '',
-    githubLink: 'https://github.com/',
+    githubLink: 'https://github.com/TruongThuUyen/SocialMedia_YouTune_FE',
   },
 ];
 
