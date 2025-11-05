@@ -1,3 +1,21 @@
+.loading-wrapper {
+  background-color: var(--color-surface-secondary);
+  transform: translateY(0);
+  animation: slide-up-to-top 1.5s ease-in-out 4s forwards;
+}
+
+@keyframes slide-up-to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 h1 {
   color: rgba(40, 44, 52, 0.8);
 }
